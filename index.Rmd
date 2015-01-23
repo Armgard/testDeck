@@ -1,26 +1,64 @@
 ---
-title       : Test deck
-subtitle    : 
-author      : 
+title       : App for BMI Measurement
+subtitle    : Project for Developing Data Products
+author      : Student
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
 ---
 
-## Read-And-Delete
+## Introduction
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+1. This is a short introduction to a little web App which calculates the so called Body Mass Index (BMI).
+2. The BMI is calculated from heigth and weigth of a person and a simple measure to tell whether the persons weight is in or out of normal range.
+3. Overweight and underweight bear potentiously serious risks, thus a simple application for monitoring weight can be useful.
+3. You can find the application at: https://armgard.shinyapps.io/Project_DataProducts/
 
 --- .class #id 
 
-## Slide 2
+## Instructions for Use
 
-```{r, fig.height=5, fig.width=5}
-plot(1 : 10, 1 : 10)
+1.The input parameters for calculating the BMI are heigth of the person in cm and the weight of the person in kg. 
+
+2.They have to be entered in the respective fields at the left hand side of the slid.
+
+3.After pressing the submit button, results are displayed on the right hand side. 
+
+
+--- .class #id 
+
+
+## Algorithm
+
+The BMI is calculated by dividing the persons weight (in kg) by the persons heigth (in m) squared:
+
+```{r}
+BMI <- function(height, weight) weight/(height/100)^2
+
 ```
+Thus, e.g. a person of heigth 170 cm and weight 70 kg has a BMI of `r round(BMI(170,70),2)`.
+
+--- .class #id 
+
+## Interpretation of results
+
+According to their BMI, the weight can be classified:
+
+| BMI           | Weight class  |   
+| ------------- |:-------------:|
+| <20           | underweight   |
+| 20-25         | normal weight |
+| 25-30         | overweight    |
+| >35           | obese         |
+
+The according classification is also part of the result.
+
+
+
+ *Thank you for your attention!*
+
 

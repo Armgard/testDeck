@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test deck</title>
+  <title>App for BMI Measurement</title>
   <meta charset="utf-8">
-  <meta name="description" content="Test deck">
-  <meta name="author" content="">
+  <meta name="description" content="App for BMI Measurement">
+  <meta name="author" content="Student">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -32,9 +32,9 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Test deck</h1>
-    <h2></h2>
-    <p><br/></p>
+    <h1>App for BMI Measurement</h1>
+    <h2>Project for Developing Data Products</h2>
+    <p>Student<br/></p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,13 +43,14 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Introduction</h2>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
+<li>This is a short introduction to a little web App which calculates the so called Body Mass Index (BMI).</li>
+<li>The BMI is calculated from heigth and weigth of a person and a simple measure to tell whether the persons weight is in or out of normal range.</li>
+<li>Overweight and underweight bear potentiously serious risks, thus a simple application for monitoring weight can be useful.</li>
+<li>You can find the application at: <a href="https://armgard.shinyapps.io/Project_DataProducts/">https://armgard.shinyapps.io/Project_DataProducts/</a></li>
 </ol>
 
   </article>
@@ -58,13 +59,69 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Instructions for Use</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">plot(1:10, 1:10)
+    <p>1.The input parameters for calculating the BMI are heigth of the person in cm and the weight of the person in kg. </p>
+
+<p>2.They have to be entered in the respective fields at the left hand side of the slid.</p>
+
+<p>3.After pressing the submit button, results are displayed on the right hand side. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Algorithm</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The BMI is calculated by dividing the persons weight (in kg) by the persons heigth (in m) squared:</p>
+
+<pre><code class="r">BMI &lt;- function(height, weight) weight/(height/100)^2
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+<p>Thus, e.g. a person of heigth 170 cm and weight 70 kg has a BMI of 24.22.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Interpretation of results</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>According to their BMI, the weight can be classified:</p>
+
+<table><thead>
+<tr>
+<th>BMI</th>
+<th align="center">Weight class</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&lt;20</td>
+<td align="center">underweight</td>
+</tr>
+<tr>
+<td>20-25</td>
+<td align="center">normal weight</td>
+</tr>
+<tr>
+<td>25-30</td>
+<td align="center">overweight</td>
+</tr>
+<tr>
+<td>&gt;35</td>
+<td align="center">obese</td>
+</tr>
+</tbody></table>
+
+<p>The according classification is also part of the result.</p>
+
+<p><em>Thank you for your attention!</em></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -76,14 +133,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Introduction'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Instructions for Use'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Algorithm'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Interpretation of results'>
+         4
       </a>
     </li>
   </ul>
